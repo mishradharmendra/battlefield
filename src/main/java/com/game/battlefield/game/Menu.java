@@ -87,7 +87,7 @@ public class Menu {
         print("\nYour Choice? ");
     }
 
-    private static void swordMenuOption() {
+    public static void swordMenuOption() {
         print("1. Wood Sword. Price 75");
         print("2. Metal Sward. Price 90");
         print("2. Gold Sward. Price 100");
@@ -95,7 +95,7 @@ public class Menu {
         print("\nYour Choice? ");
     }
 
-    private static void armourMenuOption() {
+    public static void armourMenuOption() {
         print("1. Leather Armour. Price 30");
         print("2. Iron Armour. Price 40");
         print("2. Gold Armour. Price 50");

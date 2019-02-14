@@ -3,6 +3,7 @@ package com.game.battlefield;
 import com.game.battlefield.game.Store;
 import com.game.battlefield.game.player.Player;
 import com.game.battlefield.game.weapons.armour.ArmourEnum;
+import com.game.battlefield.game.weapons.sword.SwordEnum;
 import org.junit.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -35,7 +36,7 @@ public class StoreTest {
 
         assertEquals(player.hasSword(), false);
         if(player.getPouch().getCoins() > Store.SWORD_PRICE[2]) {
-            player.addArmour(ArmourEnum.GOLD);
+            player.addSword(SwordEnum.GOLD);
             player.getPouch().removeCoins(Store.SWORD_PRICE[2]);
         }
 
