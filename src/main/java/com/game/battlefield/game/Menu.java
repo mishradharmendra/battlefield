@@ -68,7 +68,7 @@ public class Menu {
     /**
      * The battle prompt menu of this program.
      */
-    private static void startBattle() {
+    public static void startBattle() {
         print("\nWhat you you like to do?");
         print("1. Attack.");
         print("2. Use potion.");
@@ -80,7 +80,7 @@ public class Menu {
     }
 
 
-    private static void yesNoMenuOption() {
+    public static void yesNoMenuOption() {
         print("1. Yes.");
         print("2. No.");
 
