@@ -46,7 +46,7 @@ public class PrintUtil {
         print("# You have " + player.health() + " HP                       ");
         print("# " + villain.name() +" has " + villain.health() + " HP     ");
         print("# Potions left: " + player.getPotions() +  "                ");
-        print("# You have " + player.getPouch().getCoins() + " coins left in Bank");
+        print("# You have " + player.getPlayerCoin().getCoins() + " coins left in Bank");
         print("# Total Enemies killed: " + player.enemiesKilled() + "      ");
 
         // Print in case player has Sword

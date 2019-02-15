@@ -14,49 +14,49 @@ public class StoreTest {
 
     @Test
     public void canBuyArmour(){
-        player.getPouch().addCoins(500);
-        int initialBalance = player.getPouch().getCoins();
-        System.out.println("Player has total coin in bank :: " + player.getPouch().getCoins());
+        player.getPlayerCoin().addCoins(500);
+        int initialBalance = player.getPlayerCoin().getCoins();
+        System.out.println("Player has total coin in bank :: " + player.getPlayerCoin().getCoins());
 
         assertEquals(player.hasArmour(),false);
-        if(player.getPouch().getCoins() > Store.ARMOUR_PRICE[2]) {
+        if(player.getPlayerCoin().getCoins() > Store.ARMOUR_PRICE[2]) {
             player.addArmour(ArmourEnum.GOLD);
-            player.getPouch().removeCoins(Store.ARMOUR_PRICE[2]);
+            player.getPlayerCoin().removeCoins(Store.ARMOUR_PRICE[2]);
         }
 
-        assertEquals(player.getPouch().getCoins(), (initialBalance - Store.ARMOUR_PRICE[2]));
+        assertEquals(player.getPlayerCoin().getCoins(), (initialBalance - Store.ARMOUR_PRICE[2]));
         assertEquals(player.hasArmour(),true);
     }
 
     @Test
     public void canBuySWord(){
-        player.getPouch().addCoins(500);
-        int initialBalance = player.getPouch().getCoins();
-        System.out.println("Player has total coin in bank :: " + player.getPouch().getCoins());
+        player.getPlayerCoin().addCoins(500);
+        int initialBalance = player.getPlayerCoin().getCoins();
+        System.out.println("Player has total coin in bank :: " + player.getPlayerCoin().getCoins());
 
         assertEquals(player.hasSword(), false);
-        if(player.getPouch().getCoins() > Store.SWORD_PRICE[2]) {
+        if(player.getPlayerCoin().getCoins() > Store.SWORD_PRICE[2]) {
             player.addSword(SwordEnum.GOLD);
-            player.getPouch().removeCoins(Store.SWORD_PRICE[2]);
+            player.getPlayerCoin().removeCoins(Store.SWORD_PRICE[2]);
         }
 
-        assertEquals(player.getPouch().getCoins(), (initialBalance - Store.SWORD_PRICE[2]));
+        assertEquals(player.getPlayerCoin().getCoins(), (initialBalance - Store.SWORD_PRICE[2]));
         assertEquals(player.hasSword(), true);
     }
     @Test
     public void canBuyPotion() {
-        player.getPouch().addCoins(500);
-        int initialBalance = player.getPouch().getCoins();
+        player.getPlayerCoin().addCoins(500);
+        int initialBalance = player.getPlayerCoin().getCoins();
         int initialPotion = player.getPotions();
-        System.out.println("Player has total coin in bank :: " + player.getPouch().getCoins());
+        System.out.println("Player has total coin in bank :: " + player.getPlayerCoin().getCoins());
         System.out.println("initial potion for player " + initialPotion);
 
-        if(player.getPouch().getCoins() > Store.POTION_PRICE) {
+        if(player.getPlayerCoin().getCoins() > Store.POTION_PRICE) {
             player.addPotions(5);
-            player.getPouch().removeCoins(Store.POTION_PRICE * 5);
+            player.getPlayerCoin().removeCoins(Store.POTION_PRICE * 5);
         }
 
-        assertEquals(player.getPouch().getCoins(), (initialBalance - Store.POTION_PRICE * 5));
+        assertEquals(player.getPlayerCoin().getCoins(), (initialBalance - Store.POTION_PRICE * 5));
         assertEquals(player.getPotions(), initialPotion+5);
     }
 

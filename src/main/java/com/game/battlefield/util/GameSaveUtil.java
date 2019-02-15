@@ -49,8 +49,7 @@ public class GameSaveUtil {
     /**
      * Loads the state of a player from a text file and updates the player using those data.
      */
-    public static void loadState(Player player) throws IOException
-    {
+    public static void loadState(Player player) throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader("users/" + player.getName() + ".txt"));
         String[] data = GameEncryption.decrypt(reader.readLine()).split(" ");
 
@@ -81,6 +80,6 @@ public class GameSaveUtil {
         player.setEnemiesKilled(enemiesKilled);
         player.setHealth(health);
         player.setNumberOfPotions(numberOfPotions);
-        player.getPouch().setCoins(coins);
+        player.getPlayerCoin().setCoins(coins);
     }
 }

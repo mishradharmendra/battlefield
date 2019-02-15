@@ -22,7 +22,7 @@ public class Player {
     private boolean hasSword;
     private boolean hasArmour;
     private int health;
-    private Bank pouch;
+    private Bank playerCoin;
     private String name;
     private int potionsRemaining;
     private Sword sword;
@@ -45,7 +45,7 @@ public class Player {
         enemiesKilled = 0;
         sword = SwordFactory.getSword(SwordEnum.WOOD); //default is wood sword
         armour = ArmourFactory.getArmour(ArmourEnum.LEATHER); //default is clothes
-        pouch = new Bank();
+        playerCoin = new Bank();
     }
 
     /**
@@ -109,14 +109,14 @@ public class Player {
     }
 
     /**
-     * Returns the pouch of this player.
+     * Returns the playerCoin of this player.
      *
-     * @return the pouch of this player
+     * @return the playerCoin of this player
      */
-    public Bank getPouch()
+    public Bank getPlayerCoin()
     {
-        return pouch;
-    } // end of method getPouch()
+        return playerCoin;
+    } // end of method getPlayerCoin()
 
     /**
      * Returns whether this player has a sword.
@@ -310,7 +310,7 @@ public class Player {
                         + enemiesKilled + " "
                         + health + " "
                         + potionsRemaining + " "
-                        + pouch.getCoins() + " "
+                        + playerCoin.getCoins() + " "
                         + sword.name() + " "
                         + armour.name() + " "
                         + role.name();

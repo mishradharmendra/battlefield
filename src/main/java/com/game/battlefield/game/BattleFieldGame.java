@@ -29,7 +29,7 @@ public class BattleFieldGame {
 
     public BattleFieldGame(){
         player = new Player();
-        bank = player.getPouch();
+        bank = player.getPlayerCoin();
         armourDropChance = 10;
         healthPotionDropChance = 50;
         swordDropChance = 10;
@@ -152,7 +152,7 @@ public class BattleFieldGame {
     }
 
     private void runAway(Enemy enemy) {
-        if (player.getPouch().getCoins() > PENALTY_FOR_RUNNING) {
+        if (player.getPlayerCoin().getCoins() > PENALTY_FOR_RUNNING) {
             print("\n" + PENALTY_FOR_RUNNING + " coins were taken by the " + enemy.name());
             bank.removeCoins(PENALTY_FOR_RUNNING);
         }

@@ -23,7 +23,7 @@ public class Store {
 
     public static void printStore(Player player) {
         print("Welcome to the Battle Field store.\n");
-        print("You have " + player.getPouch().getCoins() + " coins.\n");
+        print("You have " + player.getPlayerCoin().getCoins() + " coins.\n");
         for (int i = 0; i < ITEM.length; i++) {
             print(i + 1 + ". " + ITEM[i] + ", Price: " + STORE_ITEM_PRICE[i]);
         }
@@ -54,7 +54,7 @@ public class Store {
                 int swordMenuChoice = getValidMenuOption();
                 switch (swordMenuChoice) {
                     case 1:
-                        if (player.getPouch().getCoins() < SWORD_PRICE[0]) {
+                        if (player.getPlayerCoin().getCoins() < SWORD_PRICE[0]) {
                             print("\nYou have insufficient coins to buy Wood sword. Please purchase an afforable item.");
                             delayMessage();
                             printStore(player);
@@ -62,23 +62,23 @@ public class Store {
                         }
                         player.addSword(SwordEnum.WOOD);
 
-                        player.getPouch().removeCoins(SWORD_PRICE[0]);
+                        player.getPlayerCoin().removeCoins(SWORD_PRICE[0]);
                         print("\nYou purchased: Wood Sword  for " + SWORD_PRICE[0] + " coins");
                         break;
                     case 2:
-                        if (player.getPouch().getCoins() < SWORD_PRICE[1]) {
+                        if (player.getPlayerCoin().getCoins() < SWORD_PRICE[1]) {
                             print("\nYou have insufficient coins to buy Metal sword. Please purchase an afforable item.");
                             delayMessage();
                             printStore(player);
                             return;
                         }
                         player.addSword(SwordEnum.METAL);
-                        player.getPouch().removeCoins(SWORD_PRICE[1]);
+                        player.getPlayerCoin().removeCoins(SWORD_PRICE[1]);
                         print("\nYou purchased: Metal Sword  for " + SWORD_PRICE[1] + " coins");
 
                         break;
                     case 3:
-                        if (player.getPouch().getCoins() < SWORD_PRICE[2]) {
+                        if (player.getPlayerCoin().getCoins() < SWORD_PRICE[2]) {
                             print("\nYou have insufficient coins to buy Gold sword. Please purchase an afforable item.");
                             delayMessage();
                             printStore(player);
@@ -86,19 +86,19 @@ public class Store {
                         }
                         player.addSword(SwordEnum.GOLD);
 
-                        player.getPouch().removeCoins(SWORD_PRICE[2]);
+                        player.getPlayerCoin().removeCoins(SWORD_PRICE[2]);
                         print("\nYou purchased: Gold Sword  for " + SWORD_PRICE[2] + " coins");
 
                         break;
                         default:
-                            if (player.getPouch().getCoins() < SWORD_PRICE[0]) {
+                            if (player.getPlayerCoin().getCoins() < SWORD_PRICE[0]) {
                                 print("\nYou have insufficient coins to buy Wood sword. Please purchase an afforable item.");
                                 delayMessage();
                                 printStore(player);
                                 return;
                             }
                             player.addSword(SwordEnum.WOOD);
-                            player.getPouch().removeCoins(SWORD_PRICE[0]);
+                            player.getPlayerCoin().removeCoins(SWORD_PRICE[0]);
                             print("\nYou purchased: Wood Sword  for " + SWORD_PRICE[0] + " coins");
 
                 }
@@ -111,7 +111,7 @@ public class Store {
                 int armourMenuChoice = getValidMenuOption();
                 switch (armourMenuChoice) {
                     case 1:
-                        if (player.getPouch().getCoins() < ARMOUR_PRICE[0]) {
+                        if (player.getPlayerCoin().getCoins() < ARMOUR_PRICE[0]) {
                             print("\nYou have insufficient coins to buy Leather Armour. Please purchase an afforable item.");
                             delayMessage();
                             printStore(player);
@@ -119,24 +119,24 @@ public class Store {
                         }
                         player.addArmour(ArmourEnum.LEATHER);
 
-                        player.getPouch().removeCoins(ARMOUR_PRICE[0]);
+                        player.getPlayerCoin().removeCoins(ARMOUR_PRICE[0]);
                         print("\nYou purchased: Leather Armour  for " + ARMOUR_PRICE[0] + " coins");
 
                         break;
                     case 2:
-                        if (player.getPouch().getCoins() < ARMOUR_PRICE[1]) {
+                        if (player.getPlayerCoin().getCoins() < ARMOUR_PRICE[1]) {
                             print("\nYou have insufficient coins to buy Iron Armour. Please purchase an afforable item.");
                             delayMessage();
                             printStore(player);
                             return;
                         }
                         player.addArmour(ArmourEnum.IRON);
-                        player.getPouch().removeCoins(ARMOUR_PRICE[1]);
+                        player.getPlayerCoin().removeCoins(ARMOUR_PRICE[1]);
                         print("\nYou purchased: Iron Armour  for " + ARMOUR_PRICE[1] + " coins");
 
                         break;
                     case 3:
-                        if (player.getPouch().getCoins() < ARMOUR_PRICE[2]) {
+                        if (player.getPlayerCoin().getCoins() < ARMOUR_PRICE[2]) {
                             print("\nYou have insufficient coins to buy Gold Armour. Please purchase an afforable item.");
                             delayMessage();
                             printStore(player);
@@ -144,7 +144,7 @@ public class Store {
                         }
                         player.addArmour(ArmourEnum.GOLD);
 
-                        player.getPouch().removeCoins(ARMOUR_PRICE[2]);
+                        player.getPlayerCoin().removeCoins(ARMOUR_PRICE[2]);
                         print("\nYou purchased: Gold Armour  for " + ARMOUR_PRICE[2] + " coins");
 
                         break;
@@ -155,7 +155,7 @@ public class Store {
 
             case 2:
                 player.addPotions(1);
-                player.getPouch().removeCoins(POTION_PRICE);
+                player.getPlayerCoin().removeCoins(POTION_PRICE);
                 print("\nYou purchased: potion for " + POTION_PRICE + " coins");
                 break;
         }
